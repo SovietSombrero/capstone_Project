@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>20 questions lobby</title>
+<html lang="en">
+<meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet"type="text/css">
+</head>
+    <body>
+        <div id = 'container'>
+    <h1>Welcome to 20 questions!</h1> 
+    </div>
+        
+        <div class="table">
+  <h2>Current open lobbies</h2>
+  <p>click on a lobby to join a game</p>
+            <button id = 'create'>Click to make game</button>
+            
+            <a href="/game.html", id = "link">link text</a>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Lobby Name</th>
+        <th>players</th>
+        <th>status</th>
+      </tr>
+    </thead>
+    <tbody id = 'tableBody'>
+        
+    </tbody>
+  </table>
+</div>
+    <script>
+        $("button#create").click(function() {
+            var row = $("<tr></tr>")
+                $("tbody#tableBody").append(row)
+            row.append("<td>terst</td>")
+            row.append("<td>terst</td>")
+            var but = row.append("<button href = 'game.html'>Join game</button>")
+            but.click(function(press) {
+                console.log(press.target)
+            })
+            axios.post('/text', {
+            
+        })
+        .then(function(response) {
+            console.log(response.data)
+        })
+        .catch(function(error) {
+            console.warn(error);
+        })
+        });
+        
+        </script>
+    </body>
+    
